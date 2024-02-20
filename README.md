@@ -121,7 +121,7 @@ ${TASK}
 После выполнения тестов созданный в <code>Telegram</code> bot собирает данные с <code>AllureReports</code> и отправляет их сообщение в нужный вам чат.
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="mediaReadme/screens/TelegramScreen.png"> 
+<img width="70%" title="Telegram Notifications" src="mediaReadme/screens/TelegramScreen1.png"> 
 </p>
 
 ### <img width="7%" style="vertical-align:middle" title="Selenoid" src="mediaReadme/logo/Selenoid.svg"> Selenoid : Видео прохождения теста в отчете
