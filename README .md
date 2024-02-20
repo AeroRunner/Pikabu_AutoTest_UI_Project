@@ -128,5 +128,5 @@ ${TASK}
 
 При интеграции с <code>AllureReports</code> вместе с общим результатом тест-кейса прикладываются media файлы : скриншот и видео. Вот пример видео в отчете о завершенном тесте: 
 <p align="center">
-  <img title="Selenoid Browser Video" src="mediaReadme/gif/SelenoidCase.gif">
+  <img title="Selenoid Browser Video" src="mediaReadme/gif/SelenoidTest.gif">
 </p>
