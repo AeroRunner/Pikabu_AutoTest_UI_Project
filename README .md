@@ -85,7 +85,7 @@ ${TASK}
 ### Overview
 
 <p align="center">
-<img title="Allure Overview" src="mediaReadme/screens/AllureReport.png">
+<img title="Allure Overview" src="mediaReadme/screens/AllureReports.png">
 </p>
 
 ## <img width="7%" style="vertical-align:middle" title="Allure TestOps" src="mediaReadme/logo/AllureTestOps.svg"> Allure TestOps : обзор результатов проекта
