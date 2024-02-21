@@ -105,7 +105,7 @@ ${TASK}
 В разделе *Test Results* уже можно детально посмотреть каждый кейс, там будут расписаны шаги и результаты. Так же в этом разделе можно добавить новые кейслы на проверку или оставить комментарии уже существующим для доработки.
 
 <p align="center">
-<img title="Test Results in Alure TestOps" src="mediaReadme/screens/TestOpsSteps.png">
+<img title="Test Results in Alure TestOps" src="mediaReadme/screens/TestOpsCases.png">
 </p>
 
 ## <img width="7%" style="vertical-align:middle" title="Jira" src="mediaReadme/logo/Jira.svg"> Jira : выведение результатов в таски
