@@ -113,7 +113,7 @@ ${TASK}
 При помощи интеграции <code>Allure TestOps</code> и <code>Jira</code>, в таску можно отобразить существующие в проекте тест-кейсы и результаты их запуска.
 
 <p align="center">
-<img title="Jira Task" src="mediaReadme/screens/JiraTask.png">
+<img title="Jira Task" src="mediaReadme/screens/Jira.png">
 </p>
 
 ### <img width="7%" style="vertical-align:middle" title="Telegram" src="mediaReadme/logo/Telegram.svg"> Telegram : отчётность при помощи бота
