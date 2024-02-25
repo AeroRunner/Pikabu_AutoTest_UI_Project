@@ -1,6 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import configs.BrowserDriverConfig;
 import helpers.Attach;
@@ -13,6 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
@@ -21,7 +23,8 @@ public class BaseTest {
 
         BrowserDriverConfig config = ConfigFactory.create(BrowserDriverConfig.class, System.getProperties());
 
-        Configuration.baseUrl = "https://pikabu.ru/";
+        baseUrl = "https://pikabu.ru/";
+        Selenide.open(baseUrl);
         Configuration.browserSize = config.getBrowserSize();
         Configuration.browser = config.getBrowser();
         Configuration.browserVersion = config.getBtowserVersion();

@@ -1,6 +1,7 @@
 package configs;
 
-import org.aeonbits.owner.Config;
+import  org.aeonbits.owner.Config;
+
 
 @Config.Sources({"classpath:properties/${host}.properties"})
 public interface BrowserDriverConfig extends Config {

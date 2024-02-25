@@ -1,9 +1,7 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
+
 import com.codeborne.selenide.SelenideElement;
-import data.CommunityData;
-import org.checkerframework.checker.units.qual.A;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
@@ -11,54 +9,60 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class PikabuCommunityPage {
-    CommunityData commData = new CommunityData();
+
     private SelenideElement
-            KakEtoSdelanoGroup = $("[href='/community/kaketosdelano']"),
-            SubscribeButton = $(".button-group"),
-            AuthPopup = $(".popup__container"),
-            AddTagButton = $(".form-group__button"),
-            AddTagField = $("[placeholder='введите тег']"),
-             TagList = $(".dropdown-item"),
-             ResponceList = $(".communities-feed__container"),
-             CHoiceTagFun = $("[href='/tag/%D0%AE%D0%BC%D0%BE%D1%80/hot']"),
-             StoriesFeed = $(".stories-feed");
+            kakEtoSdelanoGroup = $("[href='/community/kaketosdelano']"),
+            subscribeButton = $(".button-group"),
+            authPopup = $(".popup__container"),
+            addTagButton = $(".form-group__button"),
+            addTagField = $("[placeholder='введите тег']"),
+            tagList = $(".dropdown-item"),
+            responceList = $(".communities-feed__container"),
+            choiceTagFun = $("[href='/tag/%D0%AE%D0%BC%D0%BE%D1%80/hot']"),
+            storiesFeed = $(".stories-feed");
 
     public PikabuCommunityPage choiceTargetCommunityPage() {
-        KakEtoSdelanoGroup.click();
+        kakEtoSdelanoGroup.click();
         return this;
     }
 
-    public PikabuCommunityPage clickSubscribe() {
-        SubscribeButton.$(byText("Подписаться")).click();
+    public PikabuCommunityPage clickSubscribeButton() {
+        subscribeButton.$(byText("Подписаться")).click();
         return this;
     }
 
     public PikabuCommunityPage checkLoginPopup(String text) {
-        AuthPopup.shouldHave(text(text));
+        authPopup.shouldHave(text(text));
         return this;
     }
-    public PikabuCommunityPage addTag(){
-        AddTagButton.$(byText(commData.addTagRuText)).click();
+
+    public PikabuCommunityPage addTag(String tag) {
+        addTagButton.$(byText(tag)).click();
         return this;
     }
-    public PikabuCommunityPage setTag (String tag){
-        AddTagField.setValue(tag);
+
+    public PikabuCommunityPage setTag(String tag) {
+        addTagField.setValue(tag);
         return this;
     }
-    public PikabuCommunityPage choiceTag (){
-        TagList.$(byText(commData.tagQA)).click();
+
+    public PikabuCommunityPage choiceTag(String tag) {
+        tagList.$(byText(tag)).click();
         return this;
     }
-    public PikabuCommunityPage checkResponce(){
-        ResponceList.should(exist);
+
+    public PikabuCommunityPage checkResponse() {
+        responceList.should(exist);
         return this;
     }
-    public PikabuCommunityPage choiceTargetTagFun(){
-        CHoiceTagFun.click();
+
+    public PikabuCommunityPage choiceTargetTagFun() {
+        choiceTagFun.click();
         return this;
     }
-    public PikabuCommunityPage checkFeed(){
-        StoriesFeed.should(exist);
+
+    public PikabuCommunityPage checkFeed() {
+        storiesFeed.should(exist);
         return this;
     }
 

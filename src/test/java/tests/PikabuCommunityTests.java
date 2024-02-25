@@ -1,70 +1,60 @@
 package tests;
 
-import data.CommunityData;
-import data.RegisterPopupData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.PikabuCommunityPage;
 import pages.PikabuMainPage;
 
+
 import static io.qameta.allure.Allure.step;
+@Tag("AllTestRemote") @Tag("AllTestLocal") @Tag("Community")
 @DisplayName("Проверки сайта Pikabu на странице 'Сообщества'")
 public class PikabuCommunityTests extends BaseTest {
     PikabuMainPage mainPage = new PikabuMainPage();
     PikabuCommunityPage commPage = new PikabuCommunityPage();
-    RegisterPopupData popupData = new RegisterPopupData();
-    CommunityData commData = new CommunityData();
-
+    private String
+            registerPopup = "Необходимо войти или зарегистрироваться",
+            addTagRuText = "Только с тегом",
+            tagQA = "QA";
 
     @Test
-    @Tag("AllTestRemote")
-    @Tag("AllTestLocal")
-    @Tag("Community")
     @DisplayName("Проверяем появление popup-a при попытке подписаться не залогиненым пользователем")
     void checkAuthPopupAfterClickSubscribe() {
 
         step("Открываем главную страницу и переходим во вкладку 'Сообщества'", () -> {
-            mainPage.openPage()
-                    .choiceCommunityPage();
+            mainPage.choiceCommunityPage();
         });
         step("Выбираем сообщество и нажимаем кнопку 'подписаться'", () -> {
             commPage.choiceTargetCommunityPage()
-                    .clickSubscribe()
-                    .checkLoginPopup(popupData.registerPopup);
+                    .clickSubscribeButton()
+                    .checkLoginPopup(registerPopup);
         });
     }
 
     @Test
-    @Tag("AllTestRemote")
-    @Tag("AllTestLocal")
-    @Tag("Community")
     @DisplayName("Проверка поиска сообществ по тегу 'QA'")
     void searchCommunityWithTag() {
 
         step("Открываем главную страницу и переходим во вкладку 'Сообщества'", () -> {
-            mainPage.openPage()
-                    .choiceCommunityPage();
+            mainPage.choiceCommunityPage();
         });
         step("В поле поиска добавляем тег 'QA' и смотрим на полученный результат поиска", () -> {
-            commPage.addTag()
-                    .setTag(commData.tagQA)
-                    .choiceTag()
-                    .checkResponce();
+            commPage.addTag(addTagRuText)
+                    .setTag(tagQA)
+                    .choiceTag(tagQA)
+                    .checkResponse();
         });
     }
+
     @Test
-    @Tag("AllTestRemote")
-    @Tag("AllTestLocal")
-    @Tag("Community")
     @DisplayName("Проверка поиска постов сообществ по тегу из главной страницы")
-    void searchOnTagTest(){
+    void searchOnTagTest() {
         step("Открываем главную страницу и выбираем тег для подбора похожих постов", () -> {
-            mainPage.openPage();
+            commPage.choiceTargetTagFun();
         });
         step("Проверяем, что по данному тегу в ленте есть посты", () -> {
-            commPage.choiceTargetTagFun()
-                    .checkFeed();
+            commPage.checkFeed();
         });
     }
 }
