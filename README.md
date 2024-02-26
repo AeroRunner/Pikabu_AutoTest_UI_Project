@@ -27,7 +27,7 @@
 <a href="https://github.com/"><img width="8%" title="GitHub" src="mediaReadme/logo/GitHub.svg">
 <a href="https://www.jenkins.io/"><img width="8%" title="Jenkins" src="mediaReadme/logo/Jenkins.svg">
 <a href="https://web.telegram.org/a/"><img width="8%" title="Telegram" src="mediaReadme/logo/Telegram.svg">
-<a href="https://www.atlassian.com/ru/software/jira/"><img width="8%" title="Jira" src="mediaReadme/logo/Jira.svg">
+<a href="https://www.atlassian.com/ru/software/jira/"><img width="8%" title="Jira" src="mediaReadme/logo/Jira.svg"><a></a>
 </p>
 
 - Язык для написания тестов : [Java](https://www.java.com/ru/)
@@ -75,7 +75,7 @@ ${TASK}
 При запуске из <code>Jenkins</code> тест будет выполняться удаленно в браузере при помощи <code>Selenoid</code>
 
 
-## <img width="7%" style="vertical-align:middle" title="Jenkins" src="mediaReadme/logo/Jenkins.svg"> Автоматическая сборка в [Jenkins](<a href="https://jenkins.autotests.cloud/job/garage_UI_project/">)
+## <img width="7%" style="vertical-align:middle" title="Jenkins" src="mediaReadme/logo/Jenkins.svg"> Автоматическая сборка в [Jenkins](https://jenkins.autotests.cloud/job/garage_UI_project/)
 
 Для запуска сборки необходимо перейти в раздел <code>Build with Parameters</code>, выбрать нужные вам параметры в <code>browser,size,version</code> и нажать кнопку <code>Build</code>.
 <p align="center">
