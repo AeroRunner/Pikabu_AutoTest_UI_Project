@@ -3,6 +3,7 @@ package tests;
 import data.FakeData;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.PikabuMainPage;
 
@@ -22,7 +23,7 @@ public class PikabuMainPageTests extends BaseTest {
             errorMessage = "Ошибка. Вы ввели неверные данные авторизации";
 
     @Test
-    @Tag("MainPage") @Tag("AllTestRemote") @Tag("AllTestLocal")
+    @Tags({@Tag("MainPage"), @Tag("AllTestRemote"), @Tag("AllTestLocal")})
     @DisplayName("Проверка наличия кнопок в меню сайта")
     void checkButtonsInHeaderMenu() {
 
@@ -39,7 +40,7 @@ public class PikabuMainPageTests extends BaseTest {
     }
 
     @Test
-    @Tag("AllTestLocal") @Tag("MainPageOnlyLocal")
+    @Tags({@Tag("AllTestLocal"), @Tag("MainPageOnlyLocal")})
     @DisplayName("Проверка сообщение о неудачной авторизации на сайте")
     void negativeloginLocalTest() {
 
@@ -51,7 +52,7 @@ public class PikabuMainPageTests extends BaseTest {
     }
 
     @Test
-    @Tag("AllTestRemote") @Tag("MainPageOnlyRemote")
+    @Tags({@Tag("AllTestRemote"), @Tag("MainPageOnlyRemote")})
     @DisplayName("Проверка вылезающей проверки капчей при неудачной авторизации")
     void negativeloginRemoteTest() {
 

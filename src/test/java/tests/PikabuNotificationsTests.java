@@ -2,12 +2,14 @@ package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import pages.PikabuMainPage;
 import pages.PikabuNotificationPage;
 
 import static io.qameta.allure.Allure.step;
-@Tag("NotifTest") @Tag("AllTestRemote") @Tag("AllTestLocal")
+
+@Tags({@Tag("NotifTest"), @Tag("AllTestRemote"), @Tag("AllTestLocal")})
 @DisplayName("Проверки сайта Pikabu на странице уведомлений")
 public class PikabuNotificationsTests extends BaseTest {
 
@@ -15,7 +17,7 @@ public class PikabuNotificationsTests extends BaseTest {
     PikabuNotificationPage notifPage = new PikabuNotificationPage();
     private String RegistrationFieldTitle = "Создать аккаунт",
 
-            firstNotification = "\n" + "      Приветствуем на Пикабу!\n" + "      ";
+    firstNotification = "\n" + "      Приветствуем на Пикабу!\n" + "      ";
 
     @Test
     @DisplayName("Проверка первого уведомления на сайте")
